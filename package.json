@@ -1,0 +1,9 @@
+{
+  "name": "iaunzu-typescript-serializable-v1",
+  "description": "",
+  "homepage": "https://stackblitz.com/edit/iaunzu-typescript-serializable-v1",
+  "dependencies": {
+    "rxjs": "6.2.0"
+  },
+  "version": "1.0.0"
+}
