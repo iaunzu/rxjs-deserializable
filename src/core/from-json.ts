@@ -16,7 +16,7 @@ export default function fromJson<T>(self: Class<T>, json: Json, isArray?: IsArra
     throw TypeError(`Object ${json} is not an array instance. Do not use 'isArray' parameter.`);
   }
   if (isArray) {
-    return json.map(j => create(self, j));
+    return json.map((j: any) => create(self, j));
   } else {
     return create(self, json);
   }
@@ -25,11 +25,11 @@ export default function fromJson<T>(self: Class<T>, json: Json, isArray?: IsArra
 function create<T>(self: Class<T>, json: Json): T {
   const obj = Object.create(self.prototype);
   // const obj = new self();
-  Object.assign(obj, json, getTransformation(obj, json));
+  (<any>Object).assign(obj, json, getTransformation(obj, json));
   return obj;
 }
 
-function getTransformation(obj: any, json: Json): { [key: string]: any } {
+function getTransformation(obj: any, json: Json): { [key: string]: any } | undefined {
   const t = obj.transformer && obj.transformer(json);
   if (!t) {
     return undefined;

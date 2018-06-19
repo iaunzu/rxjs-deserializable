@@ -2,7 +2,7 @@ export type Json = string | any;
 export type IsArray = true | { isArray: true };
 
 export interface Class<T> {
-  new(...args): T;
+  new(...args: any[]): T;
 };
 
 export type Transformer = (json: Json) => { [key: string]: any };

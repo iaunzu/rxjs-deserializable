@@ -1,4 +1,4 @@
-export function toDate(date: any): Date {
+export function toDate(date: any): Date | undefined {
   if (!date) {
     return undefined;
   }

@@ -5,6 +5,6 @@ import { deserialize } from '../core/deserialize'
 
 export function deserializeAs<T>(c: Class<T>): OperatorFunction<any, T>;
 export function deserializeAs<T>(c: Class<T>, isArray?: IsArray): OperatorFunction<any, T[]>;
-export function deserializeAs<T>(c: Class<T>, isArray?): OperatorFunction<any, T | T[]> {
+export function deserializeAs<T>(c: Class<T>, isArray?: any): OperatorFunction<any, T | T[]> {
   return map(s => deserialize(s).as(c, isArray));
 }

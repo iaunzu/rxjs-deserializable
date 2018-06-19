@@ -2,8 +2,16 @@
   "name": "iaunzu-typescript-serializable-v1",
   "description": "",
   "homepage": "https://stackblitz.com/edit/iaunzu-typescript-serializable-v1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p src/tsconfig.json"
+  },
   "dependencies": {
     "rxjs": "6.2.0"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "devDependencies": {
+    "typescript": "^2.9.2"
+  }
 }
